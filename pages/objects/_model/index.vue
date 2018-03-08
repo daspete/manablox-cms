@@ -2,7 +2,7 @@
     <div>
         <panel title="Datamodels">
             <template slot="header">
-                <v-btn icon nuxt :to="`.create`">
+                <v-btn icon nuxt :to="`${ $route.params.model }/create`">
                     <v-icon color="white">fa-plus-circle</v-icon>
                 </v-btn>
             </template>

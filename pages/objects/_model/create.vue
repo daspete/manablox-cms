@@ -8,21 +8,25 @@
                             <v-text-field small
                                 :disabled="isSubmitting"
                                 :loading="isSubmitting"
-                                :label="field.name"
+                                :label="field.label"
                                 v-model="modelData[field.name]"
                                 :required="field.required"
                             ></v-text-field>
                         </template>
                         <template v-if="field.type=='text'">
                             <v-text-field
-                            :label="field.name"
-                            v-model="modelData[field.name]"
-                            multi-line
+                                :disabled="isSubmitting"
+                                :loading="isSubmitting"
+                                :label="field.label"
+                                v-model="modelData[field.name]"
+                                multi-line
                             ></v-text-field>
                         </template>
                         <template v-if="field.type=='relation_one'">
                             <v-select v-if="field.type == 'relation_one'"
                                 dark
+                                :disabled="isSubmitting"
+                                :loading="isSubmitting"
                                 :label="field.relation_one.foreignModel.model_name"
                                 :items="field.relation_one.foreignModelData"
                                 v-model="modelData[field.name]"
@@ -34,6 +38,8 @@
                             <v-select v-if="field.type == 'relation_many'"
                                 dark
                                 multiple
+                                :disabled="isSubmitting"
+                                :loading="isSubmitting"
                                 :label="field.relation_many.foreignModel.model_name"
                                 :items="field.relation_many.foreignModelData"
                                 v-model="modelData[field.name]"
