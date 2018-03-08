@@ -1,0 +1,30 @@
+{
+  "name": "manablox-cms",
+  "version": "0.0.0",
+  "description": "base cms for manablox built on nuxtjs",
+  "main": "index.js",
+  "repository": "git@github.com:daspete/manablox-cms.git",
+  "author": "DasPeTe <daspetemail@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.0.0-rc.3",
+    "@nuxtjs/axios": "^5.0.1",
+    "@nuxtjs/font-awesome": "^1.0.3",
+    "cross-env": "^5.1.3",
+    "dotenv": "^5.0.1",
+    "less": "^3.0.1",
+    "less-loader": "^4.0.6",
+    "manablox-ui": "^0.0.1",
+    "node-sass": "^4.7.2",
+    "nuxt": "^1.4.0",
+    "sass-loader": "^6.0.7",
+    "standard-version": "^4.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "transform-imports": "^1.2.1"
+  }
+}

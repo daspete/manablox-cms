@@ -1,0 +1,6 @@
+/node_modules
+/yarn.lock
+/.env
+/.nuxt
+/dist
+/yarn-error.log
