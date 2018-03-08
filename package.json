@@ -1,6 +1,6 @@
 {
   "name": "manablox-cms",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "base cms for manablox built on nuxtjs",
   "main": "index.js",
   "repository": "git@github.com:daspete/manablox-cms.git",
