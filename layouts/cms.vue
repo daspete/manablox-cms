@@ -1,5 +1,5 @@
 <template :class="SetSideNav">
-    <v-app >
+    <v-app>
         <admin
             title="manablox-cms"
             :full-width-topbar="true"

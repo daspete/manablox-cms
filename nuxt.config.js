@@ -31,7 +31,7 @@ module.exports = {
     },
 
     build: {
-        
+
         babel: {
             plugins: [
                 ["transform-imports", {
@@ -66,7 +66,8 @@ module.exports = {
     ],
 
     plugins: [
-
+        '~/plugins/VueUpload',
+        '~/plugins/manablox/Components',
     ],
 
     auth: {

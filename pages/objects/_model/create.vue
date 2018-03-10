@@ -6,21 +6,43 @@
                     <div v-for="(field, fieldId) in model.fields" :key="`modelfield-${ fieldId }`">
                         <template v-if="field.type=='string'">
                             <v-text-field small
+                                :required="field.required"
                                 :disabled="isSubmitting"
                                 :loading="isSubmitting"
                                 :label="field.label"
                                 v-model="modelData[field.name]"
-                                :required="field.required"
                             ></v-text-field>
                         </template>
                         <template v-if="field.type=='text'">
                             <v-text-field
+                                :required="field.required"
                                 :disabled="isSubmitting"
                                 :loading="isSubmitting"
                                 :label="field.label"
                                 v-model="modelData[field.name]"
                                 multi-line
                             ></v-text-field>
+                        </template>
+                        <template v-if="field.type=='upload'">
+                            <v-layout row>
+                                <v-flex xs4 md2>
+                                    <v-subheader>
+                                        {{ field.label }}
+                                    </v-subheader>
+                                </v-flex>
+                                <v-flex xs8 md10>
+                                    <media-gallery-button
+                                        v-model="modelData[field.name]"
+                                        label="Select file"
+                                        :multiple="true"
+                                    ></media-gallery-button>
+                                </v-flex>
+                            </v-layout>
+                            <v-layout row>
+                                <v-flex xs12>
+                                    <media-gallery-selection-preview v-model="modelData[field.name]" />
+                                </v-flex>
+                            </v-layout>
                         </template>
                         <template v-if="field.type=='relation_one'">
                             <v-select v-if="field.type == 'relation_one'"
@@ -92,10 +114,8 @@ export default {
         let fields = {};
 
         for(let x = 0; x < model.fields.length; x++){
-            fields[model.fields[x].model_name] = null;
+            fields[model.fields[x].name] = null;
         }
-
-        // let { data } = await app.$axios.$get(`/api/v1/data/${ params.model }/${ params.id }`);
 
         let relationIds = [];
         let relationId = null;
@@ -154,6 +174,8 @@ export default {
 
             this.isSubmitting = false;
         },
+
+
     }
 }
 </script>

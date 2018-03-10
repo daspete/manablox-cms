@@ -25,6 +25,7 @@
     "standard-version": "^4.3.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "transform-imports": "^1.2.1"
+    "transform-imports": "^1.2.1",
+    "vue-upload-component": "^2.8.3"
   }
 }
